@@ -14,7 +14,7 @@ public class LoginActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
-        final Intent intent = new Intent(this,MainScreenActivity.class);
+        final Intent intent = new Intent(this,MainActivity.class);
 
         fingerPrint = findViewById(R.id.image);
         fingerPrint.setImageResource(R.drawable.fingerprint);
