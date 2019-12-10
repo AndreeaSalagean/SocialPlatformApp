@@ -19,13 +19,13 @@ public class MainActivity extends AppCompatActivity {
         services= findViewById(R.id.servicesB);
         announcements = findViewById(R.id.announcementsB);
 
-//        final Intent intent = new Intent ( this, MainScreenActivity.class);
+        final Intent intent = new Intent ( this, MainScreenActivity.class);
 
         services.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
-//                startActivity(intent);
+                startActivity(intent);
             }
         });
 
@@ -33,7 +33,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-//                startActivity(intent);
+                startActivity(intent);
             }
         });
     }
