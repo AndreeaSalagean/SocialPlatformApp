@@ -10,7 +10,10 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import com.example.mysocialplatformapp.adapter.MyAdapter;
 import com.example.mysocialplatformapp.model.Announcement;
@@ -22,6 +25,7 @@ import java.util.List;
 public class MainScreenActivity extends AppCompatActivity {
     private ListView listView;
     private MyAdapter listAdapter;
+    private ImageButton addButton;
     private final List<Announcement> announcements = new ArrayList<>();
 
     @SuppressLint("NewApi")
@@ -31,8 +35,16 @@ public class MainScreenActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main_screen);
 
         listView = findViewById(R.id.announcement_list);
-
+        addButton = findViewById(R.id.add_button);
+        addButton.setImageResource(R.drawable.ic_add);
         addAnnouncements();
+
+        addButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(getApplicationContext(),R.string.app_name,Toast.LENGTH_SHORT).show();
+            }
+        });
 
         listAdapter = new MyAdapter(this, announcements);
         listView.setAdapter(listAdapter);
@@ -53,8 +65,8 @@ public class MainScreenActivity extends AppCompatActivity {
     @RequiresApi(api = Build.VERSION_CODES.O)
     private void addAnnouncements() {
         for (int i = 0; i < 10; i++) {
-            announcements.add(new Announcement("Announcement " + i, "Description " + i,
-                    "Cluj Napoca",LocalDateTime.now(),R.drawable.fingerprint));
+            announcements.add(new Announcement("Reparation services " + i, "Repair shop auto body shop durango repair service diagnostics repair download number: - Daily updated free icons and png images for your projects. All images use to free for personal projects. " + i,
+                    "Cluj Napoca",LocalDateTime.now(),R.drawable.repair));
         }
     }
 

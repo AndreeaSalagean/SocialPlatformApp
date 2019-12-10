@@ -13,6 +13,7 @@ public class AnnouncementDetailActivity extends AppCompatActivity {
     private TextView description;
     private TextView location;
     private TextView date;
+    private ImageView imageView2;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,5 +33,6 @@ public class AnnouncementDetailActivity extends AppCompatActivity {
         description.setText(announcement.getDescription());
         location.setText(String.valueOf(announcement.getLocation()));
         date.setText(String.valueOf(announcement.getLocalDateTime()));
+
     }
 }
