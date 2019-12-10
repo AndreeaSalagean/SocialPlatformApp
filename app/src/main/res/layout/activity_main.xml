@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:background="@color/colorPrimary"
+    android:gravity="center"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="What are you looking for?"
+        android:textSize="30dp"
+        android:textColor="@android:color/white"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+
+        >
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@android:drawable/ic_menu_manage"
+            android:layout_gravity="center"
+            />
+        <Button
+            android:id="@+id/servicesB"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Services"
+            android:textSize="100px"
+            android:bottomRightRadius="100dp"
+            android:bottomLeftRadius="100dp"
+            android:topLeftRadius="100dp"
+            android:shadowColor="@color/colorPrimaryDark"
+            android:textColor="@color/colorPrimary"
+            android:topRightRadius="100dp"
+            android:fontFamily="casual"
+
+            />
+
+    </LinearLayout>
+
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/announcementsB"
+        android:text="Announcements"
+        android:bottomRightRadius="10dp"
+        android:bottomLeftRadius="10dp"
+        android:topLeftRadius="10dp"
+        android:textColor="@color/colorPrimary"
+        android:fontFamily="casual"
+        android:topRightRadius="10dp"
+        android:textSize="100px"/>
+</LinearLayout>
