@@ -13,6 +13,8 @@
         android:layout_height="wrap_content"
         android:text="What are you looking for?"
         android:textSize="30dp"
+        android:fontFamily="casual"
+
         android:textColor="@android:color/white"/>
     <LinearLayout
         android:layout_width="match_parent"
@@ -45,17 +47,32 @@
 
     </LinearLayout>
 
-
-    <Button
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/announcementsB"
-        android:text="Announcements"
-        android:bottomRightRadius="10dp"
-        android:bottomLeftRadius="10dp"
-        android:topLeftRadius="10dp"
-        android:textColor="@color/colorPrimary"
-        android:fontFamily="casual"
-        android:topRightRadius="10dp"
-        android:textSize="100px"/>
+        android:orientation="horizontal"
+        android:gravity="center">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@android:drawable/ic_dialog_email"
+            android:layout_gravity="center"/>
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/announcementsB"
+            android:text="Announcements"
+            android:bottomRightRadius="10dp"
+            android:bottomLeftRadius="10dp"
+            android:topLeftRadius="10dp"
+            android:textColor="@android:color/white"
+            android:fontFamily="casual"
+            android:background="@color/colorPrimary"
+            android:topRightRadius="10dp"
+            android:textSize="100px"/>
+
+
+    </LinearLayout>
+
 </LinearLayout>
