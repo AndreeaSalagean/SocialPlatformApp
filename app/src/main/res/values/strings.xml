@@ -1,3 +1,10 @@
 <resources>
     <string name="app_name">MySocialPlatformApp</string>
+    <string name="plumbing">Plumbing</string>
+    <string name="gardening">Gardening</string>
+    <string name="it_service">IT Service</string>
+    <string name="decorating">Decorating</string>
+    <string name="electricity">Electricity</string>
+    <string name="cleaning">Cleaning</string>
+
 </resources>
