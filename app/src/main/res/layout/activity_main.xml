@@ -38,8 +38,8 @@
             android:bottomRightRadius="100dp"
             android:bottomLeftRadius="100dp"
             android:topLeftRadius="100dp"
-            android:shadowColor="@color/colorPrimaryDark"
-            android:textColor="@color/colorPrimary"
+            android:background="@color/colorPrimary"
+            android:textColor="@android:color/white"
             android:topRightRadius="100dp"
             android:fontFamily="casual"
 
