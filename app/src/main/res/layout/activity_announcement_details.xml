@@ -1,28 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:layout_margin="@dimen/small_margin">
+    android:orientation="vertical">
 
     <ImageView
         android:id="@+id/image_id"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:layout_marginTop="5dp"
+        android:layout_width="@dimen/image_dim"
+        android:layout_height="@dimen/image_dim"
+        android:layout_marginTop="@dimen/medium_margin"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="ContentDescription" />
 
     <TextView
         android:id="@+id/title_id"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textSize="30sp"
+        android:layout_marginBottom="@dimen/big_margin"
         android:fontFamily="serif"
+        android:textSize="@dimen/big_title"
         app:layout_constraintStart_toStartOf="parent"
-       android:layout_marginBottom="20dp"
         app:layout_constraintTop_toBottomOf="@id/image_id" />
 
 
@@ -30,20 +32,19 @@
         android:id="@+id/description_id"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textStyle="bold"
         android:layout_marginTop="@dimen/small_margin"
         android:layout_marginBottom="@dimen/small_margin"
+        android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/title_id" />
 
     <View
         android:id="@+id/line"
         android:layout_width="match_parent"
-        android:layout_height="1dp"
+        android:layout_height="@dimen/line_dim"
         android:background="@android:color/darker_gray"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/description_id" />
-
 
     <android.support.constraint.Guideline
         android:id="@+id/guide"
@@ -56,115 +57,120 @@
         android:id="@+id/date_id"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="@dimen/big_margin"
         app:layout_constraintStart_toEndOf="@id/date_photo"
-        app:layout_constraintTop_toBottomOf="@id/line"
-        />
+        app:layout_constraintTop_toBottomOf="@id/line" />
+
     <TextView
         android:id="@+id/location_id"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="@dimen/big_margin"
         android:textColor="@android:color/black"
-        android:textSize="18sp"
+        android:textSize="@dimen/medium_text_size"
         android:textStyle="italic"
-        app:layout_constraintStart_toEndOf="@id/user_photo"
         app:layout_constraintEnd_toEndOf="@+id/guide"
+        app:layout_constraintStart_toEndOf="@id/user_photo"
         app:layout_constraintTop_toBottomOf="@+id/line" />
 
     <ImageView
-        android:layout_width="30dp"
-        android:layout_height="30dp"
+        android:id="@+id/user_photo"
+        android:layout_width="@dimen/extra_big"
+        android:layout_height="@dimen/extra_big"
+        android:layout_marginTop="@dimen/big_margin"
+        android:src="@drawable/ic_person_pin_black_24dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/line"
-        android:id="@+id/user_photo"
-        android:layout_marginTop="20dp"
-        android:src="@drawable/ic_person_pin_black_24dp"
+        tools:ignore="ContentDescription" />
 
-        />
     <ImageView
-        android:layout_width="30dp"
-        android:layout_height="30dp"
-        app:layout_constraintTop_toBottomOf="@id/line"
         android:id="@+id/date_photo"
-        android:layout_marginTop="20dp"
+        android:layout_width="@dimen/extra_big"
+        android:layout_height="@dimen/extra_big"
+        android:layout_marginTop="@dimen/big_margin"
         android:src="@drawable/ic_date_range_black_24dp"
         app:layout_constraintStart_toEndOf="@+id/guide"
-
-        />
+        app:layout_constraintTop_toBottomOf="@id/line"
+        tools:ignore="ContentDescription" />
 
     <View
         android:id="@+id/line2"
         android:layout_width="match_parent"
-        android:layout_height="1dp"
+        android:layout_height="@dimen/line_dim"
+        android:layout_marginTop="@dimen/small_margin"
         android:background="@android:color/darker_gray"
         app:layout_constraintStart_toStartOf="parent"
-        android:layout_marginTop="@dimen/small_margin"
         app:layout_constraintTop_toBottomOf="@id/user_photo" />
 
     <ImageView
         android:id="@+id/user_ph"
-        android:layout_width="70dp"
-        android:layout_height="70dp"
+        android:layout_width="@dimen/photo_dim"
+        android:layout_height="@dimen/photo_dim"
+        android:src="@drawable/user"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/line2"
-        android:src="@drawable/user"/>
+        tools:ignore="ContentDescription" />
+
     <ImageView
         android:id="@+id/star"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:src="@drawable/ic_star_black_24dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/user_ph"
-        android:src="@drawable/ic_star_black_24dp"/>
+        tools:ignore="ContentDescription" />
+
     <TextView
         android:id="@+id/nr_stars"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:text="@string/_4_9"
+        android:textSize="@dimen/big_title"
+        android:textStyle="bold"
         app:layout_constraintStart_toEndOf="@id/star"
-        app:layout_constraintTop_toBottomOf="@id/user_ph"
-        android:text="4.9"
-        android:textSize="20dp"
-        android:textStyle="bold"/>
+        app:layout_constraintTop_toBottomOf="@id/user_ph" />
+
     <ImageView
         android:id="@+id/telephone"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:src="@drawable/ic_phone_android_black_24dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/star"
-        android:src="@drawable/ic_phone_android_black_24dp"/>
+        tools:ignore="ContentDescription" />
+
     <TextView
         android:id="@+id/nr_phone"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:text="@string/_0767555419"
+        android:textSize="@dimen/big_title"
+        android:textStyle="bold"
         app:layout_constraintStart_toEndOf="@id/telephone"
-        app:layout_constraintTop_toBottomOf="@id/nr_stars"
-        android:text="0767555419"
-        android:textSize="20dp"
-        android:textStyle="bold"/>
+        app:layout_constraintTop_toBottomOf="@id/nr_stars" />
 
     <TextView
         android:id="@+id/user_descr"
-        android:layout_marginTop="@dimen/small_margin"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/small_margin"
+        android:text="@string/i_am_a_proffesional_worker_i_have_been_doing_this_since_2009"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/telephone"
-        android:text="I am a proffesional worker. I have been doing this since 2009"/>
+        app:layout_constraintTop_toBottomOf="@id/telephone" />
 
     <Button
         android:id="@+id/contact"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:text="@string/send_message"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/user_descr"
-        android:text="Send Message"/>
+        app:layout_constraintTop_toBottomOf="@id/user_descr" />
+
     <Button
         android:id="@+id/request"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:text="@string/request_service"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/contact"
-        android:text="Request Service"
-
-        />
+        app:layout_constraintTop_toBottomOf="@id/contact"/>
 </android.support.constraint.ConstraintLayout>
