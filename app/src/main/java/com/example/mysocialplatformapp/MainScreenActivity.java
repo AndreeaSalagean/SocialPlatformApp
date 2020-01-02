@@ -42,7 +42,9 @@ public class MainScreenActivity extends AppCompatActivity {
         addButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(getApplicationContext(),R.string.app_name,Toast.LENGTH_SHORT).show();
+//                Toast.makeText(getApplicationContext(),R.string.app_name,Toast.LENGTH_SHORT).show();
+            Intent k = new Intent(MainScreenActivity.this, RequestActivity.class);
+            startActivity(k);
             }
         });
 
