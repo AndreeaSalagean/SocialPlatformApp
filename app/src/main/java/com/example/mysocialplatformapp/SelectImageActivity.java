@@ -26,7 +26,7 @@ public class SelectImageActivity extends AppCompatActivity implements View.OnCli
     public void onClick(View v) {
 
         Intent k = new Intent(SelectImageActivity.this, RequestActivity.class);
-        k.putExtra("photos", "yes");
-        startActivity(k);
+        k.putExtra("photo", "yes");
+        finish();
     }
 }
