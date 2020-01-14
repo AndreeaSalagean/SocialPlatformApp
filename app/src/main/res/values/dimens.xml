@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <dimen name="image_dim">100dp</dimen>
-    <dimen name="big_title">30sp</dimen>
+    <dimen name="big_title">20sp</dimen>
     <dimen name="big_margin">20dp</dimen>
     <dimen name="line_dim">1dp</dimen>
     <dimen name="medium_text_size">18sp</dimen>

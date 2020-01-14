@@ -1,11 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout
+<android.support.v4.widget.NestedScrollView
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical">
+   >
+    <android.support.constraint.ConstraintLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:layout_margin="@dimen/big_margin">
+
 
     <ImageView
         android:id="@+id/image_id"
@@ -110,14 +119,20 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/line2"
         tools:ignore="ContentDescription" />
-
+    <TextView
+        android:id="@+id/user_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Oscar Rogers"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/user_ph"/>
     <ImageView
         android:id="@+id/star"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:src="@drawable/ic_star_black_24dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/user_ph"
+        app:layout_constraintTop_toBottomOf="@id/user_name"
         tools:ignore="ContentDescription" />
 
     <TextView
@@ -128,7 +143,7 @@
         android:textSize="@dimen/big_title"
         android:textStyle="bold"
         app:layout_constraintStart_toEndOf="@id/star"
-        app:layout_constraintTop_toBottomOf="@id/user_ph" />
+        app:layout_constraintTop_toBottomOf="@id/user_name" />
 
     <ImageView
         android:id="@+id/telephone"
@@ -136,7 +151,7 @@
         android:layout_height="wrap_content"
         android:src="@drawable/ic_phone_android_black_24dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/star"
+        app:layout_constraintTop_toBottomOf="@id/nr_stars"
         tools:ignore="ContentDescription" />
 
     <TextView
@@ -156,7 +171,7 @@
         android:layout_marginTop="@dimen/small_margin"
         android:text="@string/i_am_a_proffesional_worker_i_have_been_doing_this_since_2009"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/telephone" />
+        app:layout_constraintTop_toBottomOf="@id/nr_phone" />
 
     <Button
         android:id="@+id/contact"
@@ -164,13 +179,32 @@
         android:layout_height="wrap_content"
         android:text="@string/send_message"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/user_descr" />
+        app:layout_constraintTop_toBottomOf="@id/request" />
 
+    <EditText
+        android:id="@+id/message_box"
+        android:layout_width="309dp"
+        android:layout_height="150dp"
+        android:inputType="text|textMultiLine"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/contact"
+        android:visibility="invisible"
+        />
+    <ImageView
+        android:id="@+id/send_icon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toEndOf="@id/message_box"
+        app:layout_constraintBottom_toBottomOf="@id/message_box"
+        android:src="@drawable/ic_send"
+        android:visibility="invisible"/>
     <Button
         android:id="@+id/request"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/request_service"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/contact"/>
-</android.support.constraint.ConstraintLayout>
+        app:layout_constraintTop_toBottomOf="@id/user_descr"/>
+    </android.support.constraint.ConstraintLayout>
+</android.support.v4.widget.NestedScrollView>
+
