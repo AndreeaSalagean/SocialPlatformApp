@@ -36,7 +36,9 @@
         android:layout_marginTop="10dp"
         app:layout_constraintStart_toStartOf="@id/textView9"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/visa_icon" />
+        app:srcCompat="@drawable/visa_icon"
+        tools:layout_height="40dp"
+        tools:layout_width="40dp" />
 
     <ImageView
         android:id="@+id/imageView5"
