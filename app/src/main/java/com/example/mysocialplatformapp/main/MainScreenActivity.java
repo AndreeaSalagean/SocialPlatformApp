@@ -14,8 +14,10 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.Button;
+import android.widget.ArrayAdapter;
 import android.widget.ImageButton;
 import android.widget.ListView;
+import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -26,8 +28,11 @@ import com.example.mysocialplatformapp.createNewAnnouncement.RequestActivity;
 import com.example.mysocialplatformapp.filters.FilterActivity;
 import com.example.mysocialplatformapp.fragments.AnnouncementFragment;
 import com.example.mysocialplatformapp.fragments.ServiceFragment;
+import com.example.mysocialplatformapp.login.LoginActivity;
 import com.example.mysocialplatformapp.model.Announcement;
 import com.example.mysocialplatformapp.reviewUser.UserReviewActivity;
+import com.example.mysocialplatformapp.reviewUser.UserReviewActivity;
+import com.example.mysocialplatformapp.myProfile.MyProfileActivity;
 
 import java.time.LocalDateTime;
 import java.util.ArrayList;
@@ -42,6 +47,9 @@ public class MainScreenActivity extends AppCompatActivity {
     private final FragmentManager fm = getSupportFragmentManager();
     private Fragment active = fragment1;
     private Button filterButton;
+    private Intent myProfileIntent;
+    private Intent logOutIntent;
+    private Button filterButton;
 
 
     @SuppressLint("NewApi")
@@ -49,6 +57,10 @@ public class MainScreenActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_screen);
+        final Intent filterIntent =new Intent(this, FilterActivity.class);
+
+        myProfileIntent = new Intent(this, MyProfileActivity.class);
+        logOutIntent = new Intent(this, MainActivity.class);
         final Intent filterIntent =new Intent(this, FilterActivity.class);
 
         serviceTab = findViewById(R.id.serviceTab);
@@ -74,12 +86,12 @@ public class MainScreenActivity extends AppCompatActivity {
 
     }
 
-    private void initializeFragments(){
+    private void initializeFragments() {
         fm.beginTransaction().add(R.id.child_container, fragment2, "2").hide(fragment2).commit();
-        fm.beginTransaction().add(R.id.child_container,fragment1, "1").commit();
+        fm.beginTransaction().add(R.id.child_container, fragment1, "1").commit();
     }
 
-    private void selectFragments(){
+    private void selectFragments() {
         serviceTab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -106,7 +118,14 @@ public class MainScreenActivity extends AppCompatActivity {
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         int id = item.getItemId();
-        if (id == R.id.account) {
+        if (id == R.id.myProfile) {
+            startActivity(myProfileIntent);
+        } else if (id == R.id.myBonusPoints) {
+
+        } else if (id == R.id.logout) {
+            logOutIntent.putExtra("logout","please logout");
+            startActivity(logOutIntent);
+            finish();
         } else if (id == R.id.home) {
         } else if (id == R.id.notification) {
         } else if (id == R.id.message) {
