@@ -37,7 +37,8 @@
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/visa_icon"
         tools:layout_height="40dp"
-        tools:layout_width="40dp" />
+        tools:layout_width="40dp"
+        android:layout_width="55dp" />
 
     <ImageView
         android:id="@+id/imageView5"

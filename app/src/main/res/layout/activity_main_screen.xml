@@ -5,7 +5,7 @@
     android:layout_height="match_parent">
     <SearchView
         android:id="@+id/search_bar"
-        android:layout_width="match_parent"
+        android:layout_width="330dp"
         android:layout_height="wrap_content"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -14,7 +14,15 @@
 
         >
     </SearchView>
+    <Button
+        android:id="@+id/filters"
+        android:layout_width="80dp"
 
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toEndOf="@id/search_bar"
+        app:layout_constraintTop_toTopOf="parent"
+        android:text="Filters"
+        />
     <FrameLayout
         android:id="@+id/child_container"
         android:layout_width="match_parent"

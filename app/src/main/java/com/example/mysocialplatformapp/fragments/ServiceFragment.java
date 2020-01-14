@@ -83,7 +83,5 @@ public class ServiceFragment extends Fragment {
         }
     }
 
-    public void create(){
 
-    }
 }
