@@ -13,20 +13,24 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.Button;
 import android.widget.ArrayAdapter;
 import android.widget.ImageButton;
 import android.widget.ListView;
 import android.widget.Spinner;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.mysocialplatformapp.announcementDetails.AnnouncementDetailActivity;
 import com.example.mysocialplatformapp.R;
 import com.example.mysocialplatformapp.adapter.MyAdapter;
 import com.example.mysocialplatformapp.createNewAnnouncement.RequestActivity;
+import com.example.mysocialplatformapp.filters.FilterActivity;
 import com.example.mysocialplatformapp.fragments.AnnouncementFragment;
 import com.example.mysocialplatformapp.fragments.ServiceFragment;
 import com.example.mysocialplatformapp.login.LoginActivity;
 import com.example.mysocialplatformapp.model.Announcement;
+import com.example.mysocialplatformapp.reviewUser.UserReviewActivity;
 import com.example.mysocialplatformapp.myProfile.MyProfileActivity;
 
 import java.time.LocalDateTime;
@@ -41,6 +45,7 @@ public class MainScreenActivity extends AppCompatActivity {
     private final Fragment fragment2 = new AnnouncementFragment();
     private final FragmentManager fm = getSupportFragmentManager();
     private Fragment active = fragment1;
+    private Button filterButton;
     private Intent myProfileIntent;
     private Intent logOutIntent;
 
@@ -50,6 +55,7 @@ public class MainScreenActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_screen);
+        final Intent filterIntent =new Intent(this, FilterActivity.class);
 
         myProfileIntent = new Intent(this, MyProfileActivity.class);
         logOutIntent = new Intent(this, MainActivity.class);
@@ -58,6 +64,23 @@ public class MainScreenActivity extends AppCompatActivity {
         announcementTab = findViewById(R.id.announcementTab);
         initializeFragments();
         selectFragments();
+
+        filterButton  = findViewById(R.id.filters);
+        filterButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(filterIntent);
+                if (active.equals(fragment1)){
+                    filterIntent.putExtra("fragment", 1);
+                     Toast.makeText(getBaseContext(), "Your answer is correct!" , Toast.LENGTH_SHORT ).show();  }
+                else {
+                    filterIntent.putExtra("fragment", 2);
+                    Toast.makeText(getBaseContext(), "Your answer is fragm 2!" , Toast.LENGTH_SHORT ).show();
+                }
+
+            }
+        });
+
     }
 
     private void initializeFragments() {

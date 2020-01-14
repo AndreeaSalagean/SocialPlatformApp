@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<android.support.v7.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:layout_margin="@dimen/big_margin"
+    tools:context=".filters.FilterActivity">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Choose your filters"
+        android:textSize="@dimen/big_title"
+        android:textStyle="bold"
+        android:layout_marginBottom="@dimen/big_margin"/>
+    <TextView
+        android:id="@+id/location_search"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Location"/>
+    <Spinner
+        android:id="@+id/location_search_spinner"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/big_margin"></Spinner>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Price"/>
+    <Spinner
+        android:id="@+id/price_spinner"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/big_margin"></Spinner>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Emergency"/>
+    <Spinner
+        android:id="@+id/emergency_spinner"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/big_margin"></Spinner>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Date"/>
+    <Spinner
+        android:id="@+id/date_spinner"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/big_margin"></Spinner>
+
+    <Button
+        android:id="@+id/result_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColorHint="@color/colorPrimary"
+        android:shadowColor="@color/colorPrimary"
+        android:text="See results"/>
+</android.support.v7.widget.LinearLayoutCompat>
