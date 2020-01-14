@@ -22,7 +22,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".main.MainScreenActivity" />
+        <activity android:name=".main.MainScreenActivity"
+            android:windowSoftInputMode="adjustPan"
+            />
         <activity
             android:name=".createNewAnnouncement.RequestActivity"
             android:parentActivityName=".main.MainScreenActivity">
