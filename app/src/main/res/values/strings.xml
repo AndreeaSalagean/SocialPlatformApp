@@ -13,5 +13,8 @@
     <string name="_4_9">4.9</string>
     <string name="services">Services</string>
     <string name="announcements">Announcements</string>
+    <string name="fingerprint_not_recognized_try_pin_instead">Fingerprint not recognized? Try PIN instead:</string>
+    <string name="_1234">1234</string>
+    <string name="login">Login</string>
 
 </resources>
