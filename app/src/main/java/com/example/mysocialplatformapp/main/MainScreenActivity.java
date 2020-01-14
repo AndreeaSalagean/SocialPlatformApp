@@ -13,8 +13,10 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.ImageButton;
 import android.widget.ListView;
+import android.widget.Spinner;
 import android.widget.TextView;
 
 import com.example.mysocialplatformapp.announcementDetails.AnnouncementDetailActivity;
@@ -23,7 +25,9 @@ import com.example.mysocialplatformapp.adapter.MyAdapter;
 import com.example.mysocialplatformapp.createNewAnnouncement.RequestActivity;
 import com.example.mysocialplatformapp.fragments.AnnouncementFragment;
 import com.example.mysocialplatformapp.fragments.ServiceFragment;
+import com.example.mysocialplatformapp.login.LoginActivity;
 import com.example.mysocialplatformapp.model.Announcement;
+import com.example.mysocialplatformapp.myProfile.MyProfileActivity;
 
 import java.time.LocalDateTime;
 import java.util.ArrayList;
@@ -37,6 +41,8 @@ public class MainScreenActivity extends AppCompatActivity {
     private final Fragment fragment2 = new AnnouncementFragment();
     private final FragmentManager fm = getSupportFragmentManager();
     private Fragment active = fragment1;
+    private Intent myProfileIntent;
+    private Intent logOutIntent;
 
 
     @SuppressLint("NewApi")
@@ -45,18 +51,21 @@ public class MainScreenActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_screen);
 
+        myProfileIntent = new Intent(this, MyProfileActivity.class);
+        logOutIntent = new Intent(this, MainActivity.class);
+
         serviceTab = findViewById(R.id.serviceTab);
         announcementTab = findViewById(R.id.announcementTab);
         initializeFragments();
         selectFragments();
     }
 
-    private void initializeFragments(){
+    private void initializeFragments() {
         fm.beginTransaction().add(R.id.child_container, fragment2, "2").hide(fragment2).commit();
-        fm.beginTransaction().add(R.id.child_container,fragment1, "1").commit();
+        fm.beginTransaction().add(R.id.child_container, fragment1, "1").commit();
     }
 
-    private void selectFragments(){
+    private void selectFragments() {
         serviceTab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -83,7 +92,14 @@ public class MainScreenActivity extends AppCompatActivity {
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         int id = item.getItemId();
-        if (id == R.id.account) {
+        if (id == R.id.myProfile) {
+            startActivity(myProfileIntent);
+        } else if (id == R.id.myBonusPoints) {
+
+        } else if (id == R.id.logout) {
+            logOutIntent.putExtra("logout","please logout");
+            startActivity(logOutIntent);
+            finish();
         } else if (id == R.id.home) {
         } else if (id == R.id.notification) {
         } else if (id == R.id.message) {

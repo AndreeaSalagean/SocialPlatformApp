@@ -10,30 +10,38 @@ import com.example.mysocialplatformapp.R;
 
 public class MainActivity extends AppCompatActivity {
 
-  private Button services;
-  private Button announcements;
-  @Override
-  protected void onCreate(Bundle savedInstanceState) {
-    super.onCreate(savedInstanceState);
-    setContentView(R.layout.activity_main);
+    private Button services;
+    private Button announcements;
 
-    services= findViewById(R.id.servicesB);
-    announcements = findViewById(R.id.announcementsB);
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
 
-    final Intent intent = new Intent ( this, MainScreenActivity.class);
+        services = findViewById(R.id.servicesB);
+        announcements = findViewById(R.id.announcementsB);
 
-    services.setOnClickListener(new View.OnClickListener() {
-      @Override
-      public void onClick(View v) {
-        startActivity(intent);
-      }
-    });
+        final Intent intent = new Intent(this, MainScreenActivity.class);
+        services.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(intent);
+            }
+        });
+        announcements.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(intent);
+            }
+        });
+    }
 
-    announcements.setOnClickListener(new View.OnClickListener() {
-      @Override
-      public void onClick(View v) {
-        startActivity(intent);
-      }
-    });
-  }
+    @Override
+    protected void onResume() {
+        super.onResume();
+        String logout = getIntent().getStringExtra("logout");
+        if (logout!=null && logout.equals("please logout")) {
+            finish();
+        }
+    }
 }

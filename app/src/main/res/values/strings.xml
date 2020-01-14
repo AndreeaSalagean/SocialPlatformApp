@@ -16,6 +16,13 @@
     <string name="fingerprint_not_recognized_try_pin_instead">Fingerprint not recognized? Try PIN instead:</string>
     <string name="_1234">1234</string>
     <string name="login">Login</string>
+    <string name="jane_doe">Jane Doe</string>
+    <string name="mark_brian">Mark Brian</string>
+    <string name="description">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</string>
+    <string name="_29_aug_2019">29 Aug 2019</string>
+    <string name="my_profile">My profile</string>
+    <string name="bonus_points">Bonus Points</string>
+    <string name="logout">Logout</string>
 
     <string-array name="months">
         <item>January</item>
