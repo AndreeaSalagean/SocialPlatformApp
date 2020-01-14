@@ -35,6 +35,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".reviewUser.UserReviewActivity" />
+        <activity android:name=".myProfile.MyProfileActivity" />
     </application>
 
 </manifest>

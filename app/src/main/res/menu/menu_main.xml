@@ -1,33 +1,57 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
-    <item android:id="@+id/home"
-        android:title=""
+    <item
+        android:id="@+id/home"
         android:icon="@drawable/ic_home"
-        app:showAsAction="always"/>
-    <item android:id="@+id/notification"
         android:title=""
+        app:showAsAction="always" />
+    <item
+        android:id="@+id/notification"
         android:icon="@drawable/ic_notifications"
-        app:showAsAction="always"/>
-    <item android:id="@+id/message"
         android:title=""
+        app:showAsAction="always" />
+    <item
+        android:id="@+id/message"
         android:icon="@drawable/ic_message"
-        app:showAsAction="always"/>
-    <item android:id="@+id/account"
         android:title=""
-        android:icon="@drawable/ic_account"
-        app:showAsAction="always"/>
+        app:showAsAction="always" />
 
-    <item android:id="@+id/plumbing"
-        android:title="@string/plumbing"/>
-    <item android:id="@+id/gardening"
-        android:title="@string/gardening"/>
-    <item android:id="@+id/it_service"
-        android:title="@string/it_service"/>
-    <item android:id="@+id/decorating"
-        android:title="@string/decorating"/>
-    <item android:id="@+id/electricity"
-        android:title="@string/electricity"/>
-    <item android:id="@+id/cleaning"
-        android:title="@string/cleaning"/>
+    <item
+        android:id="@+id/account"
+        android:icon="@drawable/ic_account"
+        android:title=""
+        app:showAsAction="always">
+
+        <menu>
+            <item
+                android:id="@+id/myProfile"
+                android:title="@string/my_profile" />
+            <item
+                android:id="@+id/myBonusPoints"
+                android:title="@string/bonus_points" />
+            <item
+                android:id="@+id/logout"
+                android:title="@string/logout" />
+        </menu>
+    </item>
+
+    <item
+        android:id="@+id/plumbing"
+        android:title="@string/plumbing" />
+    <item
+        android:id="@+id/gardening"
+        android:title="@string/gardening" />
+    <item
+        android:id="@+id/it_service"
+        android:title="@string/it_service" />
+    <item
+        android:id="@+id/decorating"
+        android:title="@string/decorating" />
+    <item
+        android:id="@+id/electricity"
+        android:title="@string/electricity" />
+    <item
+        android:id="@+id/cleaning"
+        android:title="@string/cleaning" />
 </menu>
