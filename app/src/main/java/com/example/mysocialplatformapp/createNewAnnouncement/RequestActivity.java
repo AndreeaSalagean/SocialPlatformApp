@@ -123,13 +123,11 @@ public class RequestActivity extends AppCompatActivity implements View.OnClickLi
         spinnerArray3.add("Medium");
         spinnerArray3.add("High");
         spinnerArray3.add("Very high");
-
         ArrayAdapter<String> adapter3 = new ArrayAdapter<String>(
                 this, android.R.layout.simple_spinner_item, spinnerArray3);
-
         adapter3.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        Spinner sItems3 = (Spinner) findViewById(R.id.spinner3);
-        sItems3.setAdapter(adapter3);
+        emergencyLevelSpinner = findViewById(R.id.spinner3);
+        emergencyLevelSpinner.setAdapter(adapter3);
 
         List<String> spinnerArray5 =  new ArrayList<String>();
         spinnerArray5.add("EUR");
@@ -138,13 +136,13 @@ public class RequestActivity extends AppCompatActivity implements View.OnClickLi
         ArrayAdapter<String> adapter5 = new ArrayAdapter<String>(
                 this, android.R.layout.simple_spinner_item, spinnerArray5);
         adapter5.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        Spinner sItems5 = (Spinner) findViewById(R.id.spinner5);
-        sItems5.setAdapter(adapter5);
+        currency = findViewById(R.id.spinner5);
+        currency.setAdapter(adapter5);
 
         image = findViewById(R.id.imageView2);
         image.setVisibility(View.INVISIBLE);
 
-        imgBtn = (ImageButton) findViewById(R.id.imageButton);
+        imgBtn = findViewById(R.id.imageButton);
         imgBtn.setOnClickListener(RequestActivity.this);
 
         Bundle extras = getIntent().getExtras();
