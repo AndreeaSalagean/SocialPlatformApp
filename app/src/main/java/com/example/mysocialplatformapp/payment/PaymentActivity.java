@@ -14,7 +14,7 @@ public class PaymentActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_payment);
 
-        Spinner mySpinner = (Spinner) findViewById(R.id.spinner6);
+        Spinner mySpinner = findViewById(R.id.spinner6);
 
         ArrayAdapter<String> myAdapter = new ArrayAdapter<String>(PaymentActivity.this,
                 android.R.layout.simple_list_item_1, getResources().getStringArray(R.array.months));

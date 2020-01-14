@@ -30,14 +30,13 @@
 
     <ImageView
         android:id="@+id/imageView4"
-        android:layout_height="wrap_content"
+        android:layout_height="40dp"
+        android:layout_width="55dp"
         android:layout_marginStart="140dp"
         android:layout_marginTop="10dp"
         app:layout_constraintStart_toStartOf="@id/textView9"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/visa_icon"
-        tools:layout_height="40dp"
-        tools:layout_width="40dp" />
+        app:srcCompat="@drawable/visa_icon" />
 
     <ImageView
         android:id="@+id/imageView5"
