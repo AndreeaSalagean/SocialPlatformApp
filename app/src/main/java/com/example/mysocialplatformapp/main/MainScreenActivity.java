@@ -64,6 +64,15 @@ public class MainScreenActivity extends AppCompatActivity {
         });
     }
 
+    @Override
+    protected void onResume() {
+        super.onResume();
+        Announcement announcement = (Announcement) getIntent().getSerializableExtra("announcementCreated");
+        if(announcement!=null){
+            listAdapter.insert(announcement,listAdapter.getCount());
+        }
+    }
+
     @RequiresApi(api = Build.VERSION_CODES.O)
     private void addAnnouncements() {
         for (int i = 0; i < 10; i++) {

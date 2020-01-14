@@ -4,7 +4,9 @@ import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Color;
+import android.os.Build;
 import android.os.Bundle;
+import android.support.annotation.RequiresApi;
 import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -19,8 +21,10 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.mysocialplatformapp.R;
+import com.example.mysocialplatformapp.main.MainScreenActivity;
 import com.example.mysocialplatformapp.model.Announcement;
 
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -38,8 +42,7 @@ public class RequestActivity extends AppCompatActivity implements View.OnClickLi
     private int emergencyOrService;
     private ImageView image;
     private int contor = 0;
-    public Announcement newRequest;
-
+    private Intent intent;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -90,7 +93,6 @@ public class RequestActivity extends AppCompatActivity implements View.OnClickLi
             public void onNothingSelected(AdapterView<?> parentView) {
                 // your code here
             }
-
         });
 
         List<String> spinnerArray2 =  new ArrayList<String>();
@@ -113,13 +115,11 @@ public class RequestActivity extends AppCompatActivity implements View.OnClickLi
         spinnerArray4.add("Bihor");
         spinnerArray4.add("Arad");
         spinnerArray4.add("Timis");
-
         ArrayAdapter<String> adapter4 = new ArrayAdapter<String>(
                 this, android.R.layout.simple_spinner_item, spinnerArray4);
-
         adapter4.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        Spinner sItems4 = (Spinner) findViewById(R.id.spinner4);
-        sItems4.setAdapter(adapter4);
+        location = findViewById(R.id.spinner4);
+        location.setAdapter(adapter4);
 
         List<String> spinnerArray3 =  new ArrayList<String>();
         spinnerArray3.add("Low");
@@ -138,10 +138,8 @@ public class RequestActivity extends AppCompatActivity implements View.OnClickLi
         spinnerArray5.add("EUR");
         spinnerArray5.add("Lei");
         spinnerArray5.add("$");
-
         ArrayAdapter<String> adapter5 = new ArrayAdapter<String>(
                 this, android.R.layout.simple_spinner_item, spinnerArray5);
-
         adapter5.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         Spinner sItems5 = (Spinner) findViewById(R.id.spinner5);
         sItems5.setAdapter(adapter5);
@@ -150,18 +148,14 @@ public class RequestActivity extends AppCompatActivity implements View.OnClickLi
         image.setVisibility(View.INVISIBLE);
 
         imgBtn = (ImageButton) findViewById(R.id.imageButton);
-
         imgBtn.setOnClickListener(RequestActivity.this);
 
         Bundle extras = getIntent().getExtras();
 
 
         if (extras != null) {
-
             contor = 1;
-
         }
-
     }
 
 
@@ -180,24 +174,22 @@ public class RequestActivity extends AppCompatActivity implements View.OnClickLi
         final AlertDialog alertDialog = new AlertDialog.Builder(this).create(); //Read Update
         alertDialog.setTitle("");
         alertDialog.setMessage("Do you allow this app to access your gallery?");
-
         alertDialog.setButton("ALLOW", new DialogInterface.OnClickListener() {
             public void onClick(DialogInterface dialog, int which) {
                 Intent k = new Intent(RequestActivity.this, SelectImageActivity.class);
                 startActivity(k);
             }
         });
-
         alertDialog.show();
     }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.menu_create_request, menu);
         return true;
     }
 
+    @RequiresApi(api = Build.VERSION_CODES.O)
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
 
@@ -205,19 +197,21 @@ public class RequestActivity extends AppCompatActivity implements View.OnClickLi
             if (validateForm()) {
                 Toast toast = Toast.makeText(getApplicationContext(), "Request created successfully!", Toast.LENGTH_SHORT);
                 toast.show();
-//                Intent k = new Intent(RequestActivity.this, MainScreenActivity.class);
-//                k.putExtra("title", title.getText().toString());
-//                k.putExtra("description", description.getText().toString());
-//                k.putExtra("location", location.getSelectedItem().toString());
-//                startActivity(k);
-//                newRequest = new Announcement(title.getText().toString(), description.getText().toString(), location.getSelectedItem().toString(),
-//                        LocalDateTime.now(), R.drawable.pipes);
+                intent = new Intent(RequestActivity.this, MainScreenActivity.class);
+                Announcement announcement = new Announcement(
+                        title.getText().toString(),
+                        description.getText().toString(),
+                        location.getSelectedItem().toString(),
+                        LocalDateTime.now(),
+                        R.drawable.pipes
+                );
+                intent.putExtra("announcementCreated", announcement);
+                startActivity(intent);
                 finish();
             }
         }else{
             finish();
         }
-
         return true;
     }
 
@@ -225,17 +219,14 @@ public class RequestActivity extends AppCompatActivity implements View.OnClickLi
         boolean ok = true;
         title = findViewById(R.id.editText);
         description = findViewById(R.id.description);
-
         if (title.getText().toString().trim().length() == 0){
             title.setError("Empty field!");
             ok = false;
         }
-
         if (description.getText().toString().trim().length() == 0){
             description.setError("Empty field!");
             ok = false;
         }
-
         if(emergencyOrService == 1 && !budgetField.getText().toString().matches("^\\d*\\.?\\d*$")){
             budgetField.setError("Not a valid number!");
             ok = false;

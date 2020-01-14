@@ -18,7 +18,11 @@ public class Announcement implements Serializable {
     this.photo = photo;
   }
 
-  public String getTitle() {
+    public Announcement() {
+
+    }
+
+    public String getTitle() {
     return title;
   }
 
