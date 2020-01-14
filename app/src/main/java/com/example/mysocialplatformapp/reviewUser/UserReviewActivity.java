@@ -1,7 +1,9 @@
-package com.example.mysocialplatformapp;
+package com.example.mysocialplatformapp.reviewUser;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+
+import com.example.mysocialplatformapp.R;
 
 public class UserReviewActivity extends AppCompatActivity {
 

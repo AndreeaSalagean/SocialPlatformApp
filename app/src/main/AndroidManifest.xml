@@ -9,20 +9,20 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".SelectImageActivity"
-            android:parentActivityName=".RequestActivity" />
-        <activity android:name=".MainActivity" />
-        <activity android:name=".AnnouncementDetailActivity" />
-        <activity android:name=".LoginActivity">
+        <activity android:name=".createNewAnnouncement.SelectImageActivity"
+            android:parentActivityName=".createNewAnnouncement.RequestActivity" />
+        <activity android:name=".main.MainActivity" />
+        <activity android:name=".announcementDetails.AnnouncementDetailActivity" />
+        <activity android:name=".login.LoginActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".MainScreenActivity" />
-        <activity android:name=".RequestActivity"
-            android:parentActivityName=".MainScreenActivity">
+        <activity android:name=".main.MainScreenActivity" />
+        <activity android:name=".createNewAnnouncement.RequestActivity"
+            android:parentActivityName=".main.MainScreenActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

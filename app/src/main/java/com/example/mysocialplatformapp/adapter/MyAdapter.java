@@ -10,7 +10,7 @@ import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.example.mysocialplatformapp.AnnouncementDetailActivity;
+import com.example.mysocialplatformapp.announcementDetails.AnnouncementDetailActivity;
 import com.example.mysocialplatformapp.R;
 import com.example.mysocialplatformapp.model.Announcement;
 

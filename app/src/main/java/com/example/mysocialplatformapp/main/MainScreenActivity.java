@@ -1,4 +1,4 @@
-package com.example.mysocialplatformapp;
+package com.example.mysocialplatformapp.main;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
@@ -11,11 +11,12 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ImageButton;
-import android.widget.ImageView;
 import android.widget.ListView;
-import android.widget.Toast;
 
+import com.example.mysocialplatformapp.announcementDetails.AnnouncementDetailActivity;
+import com.example.mysocialplatformapp.R;
 import com.example.mysocialplatformapp.adapter.MyAdapter;
+import com.example.mysocialplatformapp.createNewAnnouncement.RequestActivity;
 import com.example.mysocialplatformapp.model.Announcement;
 
 import java.time.LocalDateTime;
@@ -42,9 +43,8 @@ public class MainScreenActivity extends AppCompatActivity {
         addButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-//                Toast.makeText(getApplicationContext(),R.string.app_name,Toast.LENGTH_SHORT).show();
-            Intent k = new Intent(MainScreenActivity.this, RequestActivity.class);
-            startActivity(k);
+                Intent k = new Intent(MainScreenActivity.this, RequestActivity.class);
+                startActivity(k);
             }
         });
 
@@ -68,7 +68,7 @@ public class MainScreenActivity extends AppCompatActivity {
     private void addAnnouncements() {
         for (int i = 0; i < 10; i++) {
             announcements.add(new Announcement("Reparation services " + i, "Repair shop auto body shop durango repair service diagnostics repair download number: - Daily updated free icons and png images for your projects. All images use to free for personal projects. " + i,
-                    "Cluj Napoca",LocalDateTime.now(),R.drawable.repair));
+                    "Cluj Napoca", LocalDateTime.now(), R.drawable.repair));
         }
     }
 

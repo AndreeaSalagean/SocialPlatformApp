@@ -1,4 +1,4 @@
-package com.example.mysocialplatformapp;
+package com.example.mysocialplatformapp.createNewAnnouncement;
 
 import android.app.AlertDialog;
 import android.content.DialogInterface;
@@ -6,7 +6,6 @@ import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import java.time.LocalDateTime;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -19,6 +18,7 @@ import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.mysocialplatformapp.R;
 import com.example.mysocialplatformapp.model.Announcement;
 
 import java.util.ArrayList;

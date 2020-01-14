@@ -1,4 +1,4 @@
-package com.example.mysocialplatformapp;
+package com.example.mysocialplatformapp.createNewAnnouncement;
 
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
@@ -18,7 +18,6 @@ public class SelectImageActivity extends AppCompatActivity implements View.OnCli
         setContentView(R.layout.activity_select_image);
 
         img = (ImageView) findViewById(R.id.imageView);
-
         img.setOnClickListener(SelectImageActivity.this);
     }
 
