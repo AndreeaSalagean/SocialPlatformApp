@@ -8,7 +8,7 @@
     <string name="cleaning">Cleaning</string>
     <string name="i_am_a_proffesional_worker_i_have_been_doing_this_since_2009">I am a professional worker. I have been doing this since 2009</string>
     <string name="send_message">Send Message</string>
-    <string name="request_service">Request Service</string>
+    <string name="request_service">COLLABORATE!</string>
     <string name="_0767555419">0767555419</string>
     <string name="_4_9">4.9</string>
     <string name="services">Services</string>
@@ -16,5 +16,20 @@
     <string name="fingerprint_not_recognized_try_pin_instead">Fingerprint not recognized? Try PIN instead:</string>
     <string name="_1234">1234</string>
     <string name="login">Login</string>
+
+    <string-array name="months">
+        <item>January</item>
+        <item>February</item>
+        <item>March</item>
+        <item>April</item>
+        <item>May</item>
+        <item>June</item>
+        <item>July</item>
+        <item>August</item>
+        <item>September</item>
+        <item>October</item>
+        <item>November</item>
+        <item>December</item>
+    </string-array>
 
 </resources>
