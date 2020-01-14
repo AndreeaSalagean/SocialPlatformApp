@@ -5,6 +5,9 @@ import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.RequiresApi;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -12,11 +15,14 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ImageButton;
 import android.widget.ListView;
+import android.widget.TextView;
 
 import com.example.mysocialplatformapp.announcementDetails.AnnouncementDetailActivity;
 import com.example.mysocialplatformapp.R;
 import com.example.mysocialplatformapp.adapter.MyAdapter;
 import com.example.mysocialplatformapp.createNewAnnouncement.RequestActivity;
+import com.example.mysocialplatformapp.fragments.AnnouncementFragment;
+import com.example.mysocialplatformapp.fragments.ServiceFragment;
 import com.example.mysocialplatformapp.model.Announcement;
 
 import java.time.LocalDateTime;
@@ -24,10 +30,14 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class MainScreenActivity extends AppCompatActivity {
-    private ListView listView;
-    private MyAdapter listAdapter;
-    private ImageButton addButton;
-    private final List<Announcement> announcements = new ArrayList<>();
+
+    private TextView serviceTab;
+    private TextView announcementTab;
+    private final Fragment fragment1 = new ServiceFragment();
+    private final Fragment fragment2 = new AnnouncementFragment();
+    private final FragmentManager fm = getSupportFragmentManager();
+    private Fragment active = fragment1;
+
 
     @SuppressLint("NewApi")
     @Override
@@ -35,46 +45,33 @@ public class MainScreenActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_screen);
 
-        listView = findViewById(R.id.announcement_list);
-        addButton = findViewById(R.id.add_button);
-        addButton.setImageResource(R.drawable.ic_add);
-        addAnnouncements();
-
-        addButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent k = new Intent(MainScreenActivity.this, RequestActivity.class);
-                startActivity(k);
-            }
-        });
-
-        listAdapter = new MyAdapter(this, announcements);
-        listView.setAdapter(listAdapter);
-        listAdapter.notifyDataSetChanged();
-        registerForContextMenu(listView);
-
-        listView.setOnItemClickListener(new ListView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                Intent intentDetails = new Intent(parent.getContext(), AnnouncementDetailActivity.class);
-                Announcement announcement = (Announcement) parent.getItemAtPosition(position);
-                intentDetails.putExtra("announcement", announcement);
-                startActivity(intentDetails);
-            }
-        });
-
-        Announcement announcement = (Announcement) getIntent().getSerializableExtra("announcementCreated");
-        if(announcement!=null){
-            listAdapter.insert(announcement,listAdapter.getCount());
-        }
+        serviceTab = findViewById(R.id.serviceTab);
+        announcementTab = findViewById(R.id.announcementTab);
+        initializeFragments();
+        selectFragments();
     }
 
-    @RequiresApi(api = Build.VERSION_CODES.O)
-    private void addAnnouncements() {
-        for (int i = 0; i < 10; i++) {
-            announcements.add(new Announcement("Reparation services " + i, "Repair shop auto body shop durango repair service diagnostics repair download number: - Daily updated free icons and png images for your projects. All images use to free for personal projects. " + i,
-                    "Cluj Napoca", LocalDateTime.now(), R.drawable.repair));
-        }
+    private void initializeFragments(){
+        fm.beginTransaction().add(R.id.child_container, fragment2, "2").hide(fragment2).commit();
+        fm.beginTransaction().add(R.id.child_container,fragment1, "1").commit();
+    }
+
+    private void selectFragments(){
+        serviceTab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                fm.beginTransaction().hide(active).show(fragment1).commit();
+                active = fragment1;
+            }
+        });
+
+        announcementTab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                fm.beginTransaction().hide(active).show(fragment2).commit();
+                active = fragment2;
+            }
+        });
     }
 
     @Override

@@ -54,22 +54,20 @@ public class RequestActivity extends AppCompatActivity implements View.OnClickLi
         List<String> spinnerArray =  new ArrayList<String>();
         spinnerArray.add("Emergency");
         spinnerArray.add("Service");
-
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(
                 this, android.R.layout.simple_spinner_item, spinnerArray);
-
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        Spinner sItems = (Spinner) findViewById(R.id.spinner);
-        sItems.setAdapter(adapter);
+        type = findViewById(R.id.spinner);
+        type.setAdapter(adapter);
 
-        String selected = sItems.getSelectedItem().toString();
+        String selected = type.getSelectedItem().toString();
         final TextView budget = findViewById(R.id.textView7);
         budgetField = findViewById(R.id.editText3);
         final TextView emergencyLevel = findViewById(R.id.textView5);
         emergencyLevelSpinner = findViewById(R.id.spinner3);
         currency = findViewById(R.id.spinner5);
 
-        sItems.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+        type.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parentView, View selectedItemView, int position, long id) {
                 // your code here
@@ -101,13 +99,12 @@ public class RequestActivity extends AppCompatActivity implements View.OnClickLi
         spinnerArray2.add("Plumbing");
         spinnerArray2.add("Gardening");
         spinnerArray2.add("Drain");
-
         ArrayAdapter<String> adapter2 = new ArrayAdapter<String>(
                 this, android.R.layout.simple_spinner_item, spinnerArray2);
 
         adapter2.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        Spinner sItems2 = (Spinner) findViewById(R.id.spinner2);
-        sItems2.setAdapter(adapter2);
+        category = findViewById(R.id.spinner2);
+        category.setAdapter(adapter2);
 
         List<String> spinnerArray4 =  new ArrayList<String>();
         spinnerArray4.add("Cluj");
@@ -205,7 +202,12 @@ public class RequestActivity extends AppCompatActivity implements View.OnClickLi
                         LocalDateTime.now(),
                         R.drawable.pipes
                 );
-                intent.putExtra("announcementCreated", announcement);
+                if(type.getSelectedItem().toString().equals("Emergency")){
+                    intent.putExtra("announcementCreated", announcement);
+                }
+                else{
+                    intent.putExtra("serviceCreated", announcement);
+                }
                 startActivity(intent);
                 finish();
             }
