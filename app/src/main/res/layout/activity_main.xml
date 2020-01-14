@@ -5,8 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical"
     android:background="@color/colorPrimary"
-    android:gravity="center"
-    tools:context=".MainActivity">
+    android:gravity="center">
 
     <TextView
         android:layout_width="wrap_content"

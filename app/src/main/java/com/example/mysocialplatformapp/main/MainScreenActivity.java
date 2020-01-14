@@ -62,11 +62,7 @@ public class MainScreenActivity extends AppCompatActivity {
                 startActivity(intentDetails);
             }
         });
-    }
 
-    @Override
-    protected void onResume() {
-        super.onResume();
         Announcement announcement = (Announcement) getIntent().getSerializableExtra("announcementCreated");
         if(announcement!=null){
             listAdapter.insert(announcement,listAdapter.getCount());
