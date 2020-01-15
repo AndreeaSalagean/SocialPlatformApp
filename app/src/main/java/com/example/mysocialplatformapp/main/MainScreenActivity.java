@@ -24,12 +24,14 @@ import android.widget.Toast;
 import com.example.mysocialplatformapp.announcementDetails.AnnouncementDetailActivity;
 import com.example.mysocialplatformapp.R;
 import com.example.mysocialplatformapp.adapter.MyAdapter;
+import com.example.mysocialplatformapp.bonus.BonusActivity;
 import com.example.mysocialplatformapp.createNewAnnouncement.RequestActivity;
 import com.example.mysocialplatformapp.filters.FilterActivity;
 import com.example.mysocialplatformapp.fragments.AnnouncementFragment;
 import com.example.mysocialplatformapp.fragments.ServiceFragment;
 import com.example.mysocialplatformapp.login.LoginActivity;
 import com.example.mysocialplatformapp.model.Announcement;
+import com.example.mysocialplatformapp.reviewUser.UserReviewActivity;
 import com.example.mysocialplatformapp.reviewUser.UserReviewActivity;
 import com.example.mysocialplatformapp.myProfile.MyProfileActivity;
 
@@ -45,9 +47,12 @@ public class MainScreenActivity extends AppCompatActivity {
     private final Fragment fragment2 = new AnnouncementFragment();
     private final FragmentManager fm = getSupportFragmentManager();
     private Fragment active = fragment1;
+    public static String fragmentName="";
     private Button filterButton;
     private Intent myProfileIntent;
     private Intent logOutIntent;
+    private Intent bonusIntent;
+
 
 
     @SuppressLint("NewApi")
@@ -59,6 +64,7 @@ public class MainScreenActivity extends AppCompatActivity {
 
         myProfileIntent = new Intent(this, MyProfileActivity.class);
         logOutIntent = new Intent(this, MainActivity.class);
+        bonusIntent = new Intent(this, BonusActivity.class);
 
         serviceTab = findViewById(R.id.serviceTab);
         announcementTab = findViewById(R.id.announcementTab);
@@ -72,10 +78,10 @@ public class MainScreenActivity extends AppCompatActivity {
                 startActivity(filterIntent);
                 if (active.equals(fragment1)){
                     filterIntent.putExtra("fragment", 1);
-                     Toast.makeText(getBaseContext(), "Your answer is correct!" , Toast.LENGTH_SHORT ).show();  }
+                }
                 else {
                     filterIntent.putExtra("fragment", 2);
-                    Toast.makeText(getBaseContext(), "Your answer is fragm 2!" , Toast.LENGTH_SHORT ).show();
+
                 }
 
             }
@@ -94,6 +100,7 @@ public class MainScreenActivity extends AppCompatActivity {
             public void onClick(View v) {
                 fm.beginTransaction().hide(active).show(fragment1).commit();
                 active = fragment1;
+                fragmentName="1";
             }
         });
 
@@ -102,6 +109,7 @@ public class MainScreenActivity extends AppCompatActivity {
             public void onClick(View v) {
                 fm.beginTransaction().hide(active).show(fragment2).commit();
                 active = fragment2;
+                fragmentName="2";
             }
         });
     }
@@ -118,6 +126,7 @@ public class MainScreenActivity extends AppCompatActivity {
         if (id == R.id.myProfile) {
             startActivity(myProfileIntent);
         } else if (id == R.id.myBonusPoints) {
+            startActivity(bonusIntent);
 
         } else if (id == R.id.logout) {
             logOutIntent.putExtra("logout","please logout");

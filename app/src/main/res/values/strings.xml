@@ -23,6 +23,9 @@
     <string name="my_profile">My profile</string>
     <string name="bonus_points">Bonus Points</string>
     <string name="logout">Logout</string>
+    <string name="category">Category</string>
+    <string name="emergency">Emergency</string>
+    <string name="emergencies">Emergencies</string>
 
     <string-array name="months">
         <item>January</item>

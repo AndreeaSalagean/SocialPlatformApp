@@ -183,9 +183,9 @@
 
     <EditText
         android:id="@+id/message_box"
-        android:layout_width="309dp"
-        android:layout_height="150dp"
-        android:inputType="text|textMultiLine"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:inputType="textMultiLine"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/contact"
         android:visibility="invisible"
@@ -195,6 +195,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:layout_constraintStart_toEndOf="@id/message_box"
+        app:layout_constraintTop_toTopOf="@id/message_box"
         app:layout_constraintBottom_toBottomOf="@id/message_box"
         android:src="@drawable/ic_send"
         android:visibility="invisible"/>

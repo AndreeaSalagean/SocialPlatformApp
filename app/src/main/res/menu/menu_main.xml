@@ -35,23 +35,31 @@
                 android:title="@string/logout" />
         </menu>
     </item>
+    <item
+        android:id="@+id/category"
+        android:title="@string/category">
+        <menu>
 
-    <item
-        android:id="@+id/plumbing"
-        android:title="@string/plumbing" />
-    <item
-        android:id="@+id/gardening"
-        android:title="@string/gardening" />
-    <item
-        android:id="@+id/it_service"
-        android:title="@string/it_service" />
-    <item
-        android:id="@+id/decorating"
-        android:title="@string/decorating" />
-    <item
-        android:id="@+id/electricity"
-        android:title="@string/electricity" />
-    <item
-        android:id="@+id/cleaning"
-        android:title="@string/cleaning" />
+            <item
+                android:id="@+id/plumbing"
+                android:title="@string/plumbing" />
+            <item
+                android:id="@+id/gardening"
+                android:title="@string/gardening" />
+            <item
+                android:id="@+id/it_service"
+                android:title="@string/it_service" />
+            <item
+                android:id="@+id/decorating"
+                android:title="@string/decorating" />
+            <item
+                android:id="@+id/electricity"
+                android:title="@string/electricity" />
+            <item
+                android:id="@+id/cleaning"
+                android:title="@string/cleaning" />
+        </menu>
+
+    </item>
+
 </menu>

@@ -77,7 +77,7 @@ public class AnnouncementFragment extends Fragment {
     @RequiresApi(api = Build.VERSION_CODES.O)
     private void addAnnouncements() {
         for (int i = 0; i < 10; i++) {
-            announcements.add(new Announcement("Reparation announcement " + i, "Repair shop auto body shop durango repair service diagnostics repair download number: - Daily updated free icons and png images for your projects. All images use to free for personal projects. " + i,
+            announcements.add(new Announcement("Emergency " + i, "Repair shop auto body shop durango repair service diagnostics repair download number: - Daily updated free icons and png images for your projects. All images use to free for personal projects. " + i,
                     "Cluj Napoca", LocalDateTime.now(), R.drawable.repair));
         }
     }
