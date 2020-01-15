@@ -37,9 +37,8 @@
         app:layout_constraintStart_toStartOf="@id/textView9"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/visa_icon"
-        tools:layout_height="40dp"
-        tools:layout_width="40dp"
-        android:layout_width="55dp" />
+
+         />
 
     <ImageView
         android:id="@+id/imageView5"
@@ -121,11 +120,10 @@
         android:layout_width="60dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
-        android:ems="10"
         android:inputType="textPersonName"
         android:text="Year"
-        app:layout_constraintStart_toEndOf="@id/spinner6"
-        app:layout_constraintTop_toTopOf="@id/textView12" />
+        app:layout_constraintStart_toStartOf="@id/spinner6"
+        app:layout_constraintTop_toBottomOf="@id/spinner6" />
 
     <Button
         android:id="@+id/button"
@@ -135,5 +133,5 @@
         android:layout_marginEnd="30dp"
         android:text="Pay"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@id/spinner6" />
+        app:layout_constraintTop_toBottomOf="@id/editText5" />
 </android.support.constraint.ConstraintLayout>

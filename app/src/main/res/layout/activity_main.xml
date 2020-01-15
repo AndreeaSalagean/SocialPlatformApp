@@ -10,7 +10,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="What are you looking for?"
-        android:textSize="30dp"
+        android:textSize="25dp"
         android:fontFamily="casual"
 
         android:textColor="@android:color/white"/>
@@ -31,8 +31,8 @@
             android:id="@+id/servicesB"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Services"
-            android:textSize="100px"
+            android:text="@string/services"
+            android:textSize="40sp"
             android:bottomRightRadius="100dp"
             android:bottomLeftRadius="100dp"
             android:topLeftRadius="100dp"
@@ -60,7 +60,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/announcementsB"
-            android:text="Announcements"
+            android:text="@string/emergencies"
             android:bottomRightRadius="10dp"
             android:bottomLeftRadius="10dp"
             android:topLeftRadius="10dp"
@@ -68,7 +68,7 @@
             android:fontFamily="casual"
             android:background="@color/colorPrimary"
             android:topRightRadius="10dp"
-            android:textSize="100px"/>
+            android:textSize="40sp"/>
 
 
     </LinearLayout>

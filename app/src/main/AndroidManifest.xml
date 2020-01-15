@@ -9,7 +9,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".filters.FilterActivity"></activity>
+        <activity android:name=".bonus.BonusActivity"></activity>
+        <activity android:name=".filters.FilterActivity" />
         <activity android:name=".payment.PaymentActivity" />
         <activity
             android:name=".createNewAnnouncement.SelectImageActivity"
